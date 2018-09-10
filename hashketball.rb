@@ -175,20 +175,15 @@ end
 
 def big_shoe_rebounds
   shoes = []
-
   game_hash.each do |team, team_info|
-
     team_info[:players].each do |ele| 
       shoes << ele[1][:shoe]
     end
-
     shoes = shoes.sort
-
     team_info[:players].each do |ele| 
       if ele[1][:shoe] == shoes[-1]
         return ele[1][:rebounds]
       end
     end
-
   end
 end
