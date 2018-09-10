@@ -120,10 +120,10 @@ end
 
 def num_points_scored(name)
   game_hash.each do |team, team_info|
-     team_info[:players].each do |ele| 
-      if ele[0]== name
-        return ele[1][:points]
-      end
+    # team_info[:players].each do |ele| 
+      # if ele[0]== name
+      #   return ele[1][:points]
+      # end
      end
   end
 end
@@ -185,5 +185,11 @@ def big_shoe_rebounds
         return ele[1][:rebounds]
       end
     end
+  end
+end
+
+def slams_plus_one
+  game_hash[:home][:players].each do |k, v|
+    v[:slam_dunks] += 1
   end
 end
